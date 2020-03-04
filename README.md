@@ -4,4 +4,3 @@
 
 
 # To Download APK [![Download APK](https://www.materialui.co/materialIcons/file/file_download_black_36x36.png)](https://raw.githubusercontent.com/shyamkumaryadav/GPACalculatorApp/master/APK/GPACalculator.apk)
-
