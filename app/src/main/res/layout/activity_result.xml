@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/result"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#27C80A"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.24000001">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutSum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewSum"
+                style="@android:style/Widget.TextView.PopupMenu"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/sum"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#0920EA" />
+
+            <TextView
+                android:id="@+id/textSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#E62012" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPercent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewPercent"
+                style="@android:style/Widget.TextView.PopupMenu"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/percent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#0920EA" />
+
+            <TextView
+                android:id="@+id/textPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#E62012" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutGPA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewGPA"
+                style="@android:style/Widget.TextView.PopupMenu"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/gpa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#0920EA" />
+
+            <TextView
+                android:id="@+id/textGPA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#E62012" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:onClick="gotoBack"
+        android:text="@string/back"
+        android:textSize="30sp"
+        app:icon="@drawable/back_black_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnExit"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:textSize="30sp"
+        app:icon="@drawable/exit_to_app"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="hotExit"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

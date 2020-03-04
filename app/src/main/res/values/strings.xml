@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">GPA Calculater</string>
+    <string name="paper1">Paper 1</string>
+    <string name="paper1_hint">Enter Marks of Paper 1</string>
+    <string name="paper2">Paper 2</string>
+    <string name="paper3">Paper 3</string>
+    <string name="paper4">Paper 4</string>
+    <string name="paper5">Paper 5</string>
+    <string name="paper6">Paper 6</string>
+    <string name="pracitcal12">Pracitcal 1 &amp; 2</string>
+    <string name="pracitcal34">Pracitcal 3 &amp; 4</string>
+    <string name="pracitcal56">Pracitcal 5 &amp; 6</string>
+    <string name="btn">Calculate</string>
+    <string name="result">Result</string>
+    <string name="sum">SUM</string>
+    <string name="percent">Percent</string>
+    <string name="gpa">GPA</string>
+    <string name="back">Back</string>
+    <string name="exit">Exit</string>
+    <string name="ok">Ok</string>
+    <string name="username">Username</string>
+    <string name="hint">hint</string>
+</resources>
