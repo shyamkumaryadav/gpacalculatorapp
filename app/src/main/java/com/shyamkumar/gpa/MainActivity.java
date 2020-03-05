@@ -68,9 +68,8 @@ public class MainActivity extends AppCompatActivity {
        paper8 = findViewById(R.id.paper8);
        paper9 = findViewById(R.id.paper9);
        paper10 = findViewById(R.id.paper10);
-
        btnCalculate = findViewById(R.id.button);
-       btnCalculate.setClickable(false);
+
 /*
        paperLayout1 = findViewById(R.id.paperLayout1);
        paperLayout2 = findViewById(R.id.paperLayout2);
@@ -83,44 +82,11 @@ public class MainActivity extends AppCompatActivity {
        paperLayout9 = findViewById(R.id.paperLayout9);
        paperLayout10 = findViewById(R.id.paperLayout10);
 */
-
-
-//     Check if given number is right or not
-       paper1.addTextChangedListener(rangeCheck);
-       paper2.addTextChangedListener(rangeCheck);
-       paper3.addTextChangedListener(rangeCheck);
-       paper4.addTextChangedListener(rangeCheck);
-       paper5.addTextChangedListener(rangeCheck);
-       paper6.addTextChangedListener(rangeCheck);
-       paper7.addTextChangedListener(rangeCheck);
-       paper8.addTextChangedListener(rangeCheck);
-       paper9.addTextChangedListener(rangeCheck);
-       paper10.addTextChangedListener(rangeCheck);
-
-
-
        //Close The app From second Activity
        if (getIntent().getBooleanExtra("EXIT", false)) {
            finish();
        }
-
-//        Button button = findViewById(R.id.button);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onAlert();
-//            }
-//        });
-
-
-       //disable btn
-
-
-
    }
-
-
-
    private TextWatcher rangeCheck = new TextWatcher() {
        @Override
        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -140,49 +106,34 @@ public class MainActivity extends AppCompatActivity {
                    paper9.getText().toString().isEmpty() &&
                    paper10.getText().toString().isEmpty()
            )){
+               btnCalculate.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_thumb_up_black_24dp, 0,0,0);
                btnCalculate.setClickable(true);
+           }else{
+               btnCalculate.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_thumb_down_black_24dp, 0,0,0);
+               btnCalculate.setClickable(false);
            }
        }
-
        @Override
        public void afterTextChanged(Editable s) {
            try {
                int val = Integer.parseInt(s.toString());
                if (val > 100) {
                    s.replace(0, s.length(), "100", 0, 3);
-               }else if (val < 1){
-                   s.replace(0, s.length(), "1", 0, 1);
+                   Toast.makeText(getApplicationContext(), "you are not able to Enter more than " +
+                                   "100 !!!",
+                           Toast.LENGTH_LONG).show();
+               }else if (val < 0){
+                   s.replace(0, s.length(), "0", 0, 1);
+                   Toast.makeText(getApplicationContext(), "you are not able to Enter less than 0" +
+                                   " !!!"
+                           , Toast.LENGTH_LONG).show();
                }
            } catch (NumberFormatException ex) {
-               Toast.makeText(getApplicationContext(), "Some Error #$%@!$", Toast.LENGTH_LONG).show();
+//               Toast.makeText(getApplicationContext(), "Some Error #$%@!$", Toast.LENGTH_LONG).show();
            }
 
        }
    };
-       //    public void onAlert(){
-//            LayoutInflater inflater = LayoutInflater.from(this);
-//            View view1 = inflater.inflate(R.layout.alertinfo, null);
-//
-//            Button button2 = view1.findViewById(R.id.button2);
-//            Button button3 = view1.findViewById(R.id.button3);
-//
-//            button2.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    onBackPressed();
-//                }
-//            });
-//
-//            button3.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    openMe();
-//                }
-//            });
-//
-//            AlertDialog alertDialog = new AlertDialog.Builder(this).setView(view1).create();
-//            alertDialog.show();
-//   }
    public void openMe() {
        //GPA MARKS LIST add
        marksList.add(Integer.parseInt(paper1.getText().toString().trim()));
