@@ -4,9 +4,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextWatcher;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 //    private TextInputLayout paperLayout10;
     private TextInputEditText paper10;
 
+    private Button btnCalculate;
+
 
     // Some Variable
     ArrayList<Integer> marksList = new ArrayList<Integer>();
@@ -62,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
        paper8 = findViewById(R.id.paper8);
        paper9 = findViewById(R.id.paper9);
        paper10 = findViewById(R.id.paper10);
+
+       btnCalculate = findViewById(R.id.button);
+       btnCalculate.setClickable(false);
 /*
        paperLayout1 = findViewById(R.id.paperLayout1);
        paperLayout2 = findViewById(R.id.paperLayout2);
@@ -89,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
        paper10.addTextChangedListener(rangeCheck);
 
 
+
        //Close The app From second Activity
        if (getIntent().getBooleanExtra("EXIT", false)) {
            finish();
@@ -101,7 +111,15 @@ public class MainActivity extends AppCompatActivity {
 //                onAlert();
 //            }
 //        });
+
+
+       //disable btn
+
+
+
    }
+
+
 
    private TextWatcher rangeCheck = new TextWatcher() {
        @Override
@@ -111,7 +129,19 @@ public class MainActivity extends AppCompatActivity {
 
        @Override
        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+           if(!(paper1.getText().toString().isEmpty() &&
+                   paper2.getText().toString().isEmpty() &&
+                   paper3.getText().toString().isEmpty() &&
+                   paper4.getText().toString().isEmpty() &&
+                   paper5.getText().toString().isEmpty() &&
+                   paper6.getText().toString().isEmpty() &&
+                   paper7.getText().toString().isEmpty() &&
+                   paper8.getText().toString().isEmpty() &&
+                   paper9.getText().toString().isEmpty() &&
+                   paper10.getText().toString().isEmpty()
+           )){
+               btnCalculate.setClickable(true);
+           }
        }
 
        @Override
@@ -119,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
            try {
                int val = Integer.parseInt(s.toString());
                if (val > 100) {
-                   s.replace(0, s.length(), "100", 0, 2);
-               } else if (val < 1) {
+                   s.replace(0, s.length(), "100", 0, 3);
+               }else if (val < 1){
                    s.replace(0, s.length(), "1", 0, 1);
                }
            } catch (NumberFormatException ex) {
@@ -225,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
                 "\nPaper 2 : "+ Objects.requireNonNull(paper8.getText()).toString().trim()+
                 "\nPaper 2 : "+ Objects.requireNonNull(paper9.getText()).toString().trim()+
                 "\nPaper 2 : "+ Objects.requireNonNull(paper10.getText()).toString().trim()
-                );
+                ).setCancelable(false);
         alertDialogBuilder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {

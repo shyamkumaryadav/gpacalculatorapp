@@ -25,13 +25,14 @@ public class Result extends AppCompatActivity {
         textPercent = findViewById(R.id.textPercent);
         textGPA = findViewById(R.id.textGPA);
 
-        textSum.setText(Sum);
-        textPercent.setText(Percent);
-        textGPA.setText(GPA);
+        textSum.setText(": "+Sum);
+        textPercent.setText(": "+Percent);
+        textGPA.setText(": "+GPA);
     }
 
     public void gotoBack(View view) {
         finish();
+
     }
 
     public void hotExit(View view) {
