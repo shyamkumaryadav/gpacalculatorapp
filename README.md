@@ -1,4 +1,4 @@
-# GPA Calculator App [![version](https://img.shields.io/badge/version-1.0.0-yellow.svg)](https://github.com/shyamkumaryadav)
+# GPA Calculator App ![version](https://img.shields.io/badge/version-1.0.0-yellow.svg) ![Star](https://img.shields.io/github/stars/shyamkumaryadav/GPACalculatorApp)
 
 ### A GPA Calculator app Copy From [@dheerajreal](https://github.com/dheerajreal/gpa-calculator)
 
