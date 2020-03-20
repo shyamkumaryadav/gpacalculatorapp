@@ -7,5 +7,5 @@
 ### Contribut To This Project By ![Folk](https://img.shields.io/github/forks/shyamkumaryadav/GPACalculatorApp) the [GPADev](https://github.com/shyamkumaryadav/GPACalculatorApp/tree/GPADev) branch ![Size](https://img.shields.io/github/repo-size/shyamkumaryadav/GPACalculatorApp)
 
 
-# To Download APK [![Download APK](https://www.materialui.co/materialIcons/file/file_download_black_36x36.png)](https://raw.githubusercontent.com/shyamkumaryadav/GPACalculatorApp/master/APK/GPACalculator.apk)
+# To Download APK [![Download APK](https://www.materialui.co/materialIcons/file/cloud_download_black_36x36.png)](https://raw.githubusercontent.com/shyamkumaryadav/GPACalculatorApp/master/APK/GPACalculator.apk)
 
