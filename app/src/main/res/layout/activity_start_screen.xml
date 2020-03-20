@@ -12,10 +12,26 @@
         android:id="@+id/Logo"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:src="@mipmap/ic_launcher_foreground"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="91dp"
+        android:fontFamily="@font/changa"
+        android:shadowColor="#0B0A0A"
+        android:text="@string/app_name"
+        android:textColor="@color/withe"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
