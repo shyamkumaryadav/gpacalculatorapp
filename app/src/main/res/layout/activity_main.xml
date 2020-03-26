@@ -244,23 +244,25 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </ScrollView>
+
     <Button
         android:id="@+id/button"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:onClick="open"
-        android:paddingLeft="40dp"
-        android:paddingRight="25dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btn"
         android:backgroundTint="@color/green"
         android:drawableTint="@color/withe"
+        android:gravity="center"
+        android:onClick="open"
+        android:paddingEnd="25dp"
         android:text="@string/btn"
+        android:textAllCaps="false"
+        android:textColor="@color/orange"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/btn"
-        android:textAllCaps="false"
-        android:textColor="@color/orange"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 </RelativeLayout>
