@@ -18,4 +18,4 @@
 
 ![Release](https://github.com/shyamkumaryadav/gpacalculatorapp/releases) <-- Go To Release Page  
 
-<div><a href="https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v0.0.1/GPACalculator.apk">Click Me To Download</a></div>
+<div><a href="https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v0.0.2/app-debug.apk">Click Me To Download</a></div>
