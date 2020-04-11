@@ -1,15 +1,15 @@
 package com.shyamkumar.gpa;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.Objects;
 
 
@@ -40,12 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 	// List
-	Integer[] marksList;
-	private int sum = 0;
-	Integer[] gpaList;
-	private float gpa = 0;
-
-
+	Integer[] marksList = new Integer[10];
+	public int sum = 0;
+	Integer[] gpaList = new Integer[10];
+	public float gpa = 0;
    protected void onCreate(Bundle savedInstanceState) {
 	   super.onCreate(savedInstanceState);
 	   setContentView(R.layout.activity_main);
@@ -73,23 +71,68 @@ public class MainActivity extends AppCompatActivity {
        paper9.addTextChangedListener(rangeCheck);
        paper10.addTextChangedListener(rangeCheck);
 
-
-/*
-	   paperLayout1 = findViewById(R.id.paperLayout1);
-	   paperLayout2 = findViewById(R.id.paperLayout2);
-	   paperLayout3 = findViewById(R.id.paperLayout3);
-	   paperLayout4 = findViewById(R.id.paperLayout4);
-	   paperLayout5 = findViewById(R.id.paperLayout5);
-	   paperLayout6 = findViewById(R.id.paperLayout6);
-	   paperLayout7 = findViewById(R.id.paperLayout7);
-	   paperLayout8 = findViewById(R.id.paperLayout8);
-	   paperLayout9 = findViewById(R.id.paperLayout9);
-	   paperLayout10 = findViewById(R.id.paperLayout10);
-*/
-	   //Close The app From second Activity
 	   if (getIntent().getBooleanExtra("EXIT", false)) {
 		   finish();
 	   }
+
+	   btnCalculate.setOnClickListener(new View.OnClickListener() {
+		   @Override
+		   public void onClick(View v) {
+		   	try {
+				if (Objects.requireNonNull(paper8.getText()).toString().isEmpty()) {
+					if (Objects.requireNonNull(paper1.getText()).toString().isEmpty() && Objects.requireNonNull(paper2.getText()).toString().isEmpty() && Objects.requireNonNull(paper3.getText()).toString().isEmpty() && Objects.requireNonNull(paper4.getText()).toString().isEmpty() && Objects.requireNonNull(paper5.getText()).toString().isEmpty() && Objects.requireNonNull(paper6.getText()).toString().isEmpty() && Objects.requireNonNull(paper7.getText()).toString().isEmpty() && Objects.requireNonNull(paper9.getText()).toString().isEmpty() && Objects.requireNonNull(paper10.getText()).toString().isEmpty()) {
+						Toast.makeText(getApplicationContext(), "All Filed is Not True ", Toast.LENGTH_LONG).show();
+					}
+				} else {
+					marksList[0] = Integer.valueOf(Objects.requireNonNull(paper1.getText()).toString());
+					marksList[1] = Integer.valueOf(Objects.requireNonNull(paper2.getText()).toString());
+					marksList[2] = Integer.valueOf(Objects.requireNonNull(paper3.getText()).toString());
+					marksList[3] = Integer.valueOf(Objects.requireNonNull(paper4.getText()).toString());
+					marksList[4] = Integer.valueOf(Objects.requireNonNull(paper5.getText()).toString());
+					marksList[5] = Integer.valueOf(Objects.requireNonNull(paper6.getText()).toString());
+					marksList[6] = Integer.valueOf(Objects.requireNonNull(paper7.getText()).toString());
+					marksList[7] = Integer.valueOf(Objects.requireNonNull(paper8.getText()).toString());
+					marksList[8] = Integer.valueOf(Objects.requireNonNull(paper9.getText()).toString());
+					marksList[9] = Integer.valueOf(Objects.requireNonNull(paper10.getText()).toString());
+					for (Integer integer : marksList) {
+						sum = sum + integer;
+					}
+					for (int i = 0; i < marksList.length; i++) {
+						if (marksList[i] < 40) {
+							gpaList[i] = 0;
+						} else if (marksList[i] >= 40 && marksList[i] < 45) {
+							gpaList[i] = 4;
+						} else if (marksList[i] >= 45 && marksList[i] < 50) {
+							gpaList[i] = 5;
+						} else if (marksList[i] >= 50 && marksList[i] < 55) {
+							gpaList[i] = 6;
+						} else if (marksList[i] >= 55 && marksList[i] < 60) {
+							gpaList[i] = 7;
+						} else if (marksList[i] >= 60 && marksList[i] < 70) {
+							gpaList[i] = 8;
+						} else if (marksList[i] >= 70 && marksList[i] < 80) {
+							gpaList[i] = 9;
+						} else if (marksList[i] >= 80) {
+							gpaList[i] = 10;
+						}
+						gpa = gpa + gpaList[i];
+					}
+
+//					Toast.makeText(getApplicationContext(), "Sum: " + sum + "\tGPA: " + gpa / 10, Toast.LENGTH_LONG).show();
+					btnCalculate.setClickable(false);
+					Intent intent = new Intent(MainActivity.this, Result.class);
+					intent.putExtra("sum", sum);
+					intent.putExtra("gpa", gpa);
+					startActivity(intent);
+					sum = 0;
+					gpa = 0;
+
+				}
+			}catch (Exception e){
+				Toast.makeText(getApplicationContext(), "All Filed is Not True ", Toast.LENGTH_LONG).show();
+			}
+		   }
+	   });
    }
 
    private TextWatcher rangeCheck = new TextWatcher() {
@@ -100,146 +143,24 @@ public class MainActivity extends AppCompatActivity {
 
 	   @Override
 	   public void onTextChanged(CharSequence s, int start, int before, int count) {
-		   if(!(paper1.getText().toString().isEmpty() &&
-				   paper2.getText().toString().isEmpty() &&
-				   paper3.getText().toString().isEmpty() &&
-				   paper4.getText().toString().isEmpty() &&
-				   paper5.getText().toString().isEmpty() &&
-				   paper6.getText().toString().isEmpty() &&
-				   paper7.getText().toString().isEmpty() &&
-				   paper8.getText().toString().isEmpty() &&
-				   paper9.getText().toString().isEmpty() &&
-				   paper10.getText().toString().isEmpty()
-		   )){
-			   btnCalculate.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_thumb_up_black_24dp, 0,0,0);
-			   btnCalculate.setClickable(true);
-		   }else{
-			   btnCalculate.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_thumb_down_black_24dp, 0,0,0);
-			   btnCalculate.setClickable(false);
-		   }
+
 	   }
 	   @Override
 	   public void afterTextChanged(Editable s) {
 		   try {
 			   int val = Integer.parseInt(s.toString());
+			   btnCalculate.setClickable(true);
 			   if (val > 100) {
 				   s.replace(0, s.length(), "100", 0, 3);
 				   Toast.makeText(getApplicationContext(), "you are not able to Enter more than " +
 								   "100 !!!",
 						   Toast.LENGTH_LONG).show();
-			   }else if (val < 0){
-				   s.replace(0, s.length(), "0", 0, 1);
-				   Toast.makeText(getApplicationContext(), "you are not able to Enter less than 0" +
-								   " !!!"
-						   , Toast.LENGTH_LONG).show();
+
 			   }
 		   } catch (NumberFormatException ex) {
-//               Toast.makeText(getApplicationContext(), "Some Error #$%@!$", Toast.LENGTH_LONG).show();
+			   Toast.makeText(getApplicationContext(), "Sorry !!!", Toast.LENGTH_LONG).show();
 		   }
 
 	   }
    };
-//
-//   public void openMe() {
-//	   //GPA MARKS LIST add
-//	   marksList.add(Integer.parseInt(paper1.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper2.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper3.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper4.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper5.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper6.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper7.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper8.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper9.getText().toString().trim()));
-//	   marksList.add(Integer.parseInt(paper10.getText().toString().trim()));
-//
-//
-//	   // Add GPA To Respactive Paper
-//	   for (int marks: marksList){
-//	   if (marks < 40) {
-//		   gpaList.add(0);
-//	   } else if (marks >= 40 && marks < 45) {
-//		   gpaList.add(4);
-//	   } else if (marks >= 45 && marks < 50) {
-//		   gpaList.add(5);
-//	   } else if (marks >= 50 && marks < 55) {
-//		   gpaList.add(6);
-//	   } else if (marks >= 55 && marks < 60) {
-//		   gpaList.add(7);
-//	   } else if (marks >= 60 && marks < 70) {
-//		   gpaList.add(8);
-//	   } else if (marks >= 70 && marks < 80) {
-//		   gpaList.add(9);
-//	   } else if (marks >= 80) {
-//		   gpaList.add(10);
-//	   }
-//	};
-//
-//	   //add all values in marksList
-//	   for (int i = 0; i < marksList.size(); i++) {
-//		   sum += marksList.get(i);
-//	   }
-//
-//	   //add all values in gpaList
-//	   for (int i = 0; i < gpaList.size(); i++) {
-//		   gpa += gpaList.get(i);
-//	   }
-//
-//	   // all value
-//	   String Sum = String.format("%s", sum);
-//	   String Percent = String.format("%.2f",(sum / 10));
-//	   String Gpa = String.format("%.2f", (gpa / 10));
-//
-//	   Intent intent = new Intent(this, Result.class);
-//	   intent.putExtra("Sum", Sum);
-//	   intent.putExtra("Percent", Percent);
-//	   intent.putExtra("Gpa", Gpa);
-//	   startActivity(intent);
-//   }
-//
-//
-//
-//	public void open(){
-//		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-//		alertDialogBuilder.setMessage("Are you sure, That down Information is Right." +
-//				"\nPaper 1 : "+ Objects.requireNonNull(paper1.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper2.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper3.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper4.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper5.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper6.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper7.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper8.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper9.getText()).toString().trim()+
-//				"\nPaper 2 : "+ Objects.requireNonNull(paper10.getText()).toString().trim()
-//				).setCancelable(false);
-//		alertDialogBuilder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-//						@Override
-//						public void onClick(DialogInterface arg0, int arg1) {
-//							if(!(paper1.getText().toString().isEmpty() &&
-//									paper2.getText().toString().isEmpty() &&
-//									paper3.getText().toString().isEmpty() &&
-//									paper4.getText().toString().isEmpty() &&
-//									paper5.getText().toString().isEmpty() &&
-//									paper6.getText().toString().isEmpty() &&
-//									paper7.getText().toString().isEmpty() &&
-//									paper8.getText().toString().isEmpty() &&
-//									paper9.getText().toString().isEmpty() &&
-//									paper10.getText().toString().isEmpty()
-//									)){openMe();}else {
-//								Toast.makeText(getApplicationContext(), "Some Error #$%@!$",
-//										Toast.LENGTH_LONG).show();
-//							}
-//						}
-//					});
-//		alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				dialog.cancel();
-//			}
-//	});
-
-//	AlertDialog alertDialog = alertDialogBuilder.create();
-//	alertDialog.show();
-   }
-//}
+}

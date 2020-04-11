@@ -121,6 +121,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
+        android:background="#A411387C"
         android:onClick="gotoBack"
         android:text="@string/back"
         android:textSize="30sp"

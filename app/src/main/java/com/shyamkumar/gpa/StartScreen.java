@@ -38,6 +38,6 @@ public class StartScreen extends AppCompatActivity {
                 startActivity(new Intent(StartScreen.this, MainActivity.class));
                 finish();
             }
-        }, 4000);
+        }, 2000);
     }
 }

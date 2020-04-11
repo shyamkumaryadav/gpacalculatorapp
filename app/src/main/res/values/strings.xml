@@ -27,4 +27,6 @@
     <string name="gpa">GPA</string>
     <string name="back">Back</string>
     <string name="exit">Exit</string>
+    <string name="TotalSum">sum</string>
+    <string name="TotalGpa">gpa</string>
 </resources>
