@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GPA Calculater</string>
+    <string name="app_name">GPA Calculator</string>
     <string name="paper1">Paper 1</string>
     <string name="paper1_hint">Enter Marks of Paper 1</string>
     <string name="paper2">Paper 2</string>
@@ -27,6 +27,4 @@
     <string name="gpa">GPA</string>
     <string name="back">Back</string>
     <string name="exit">Exit</string>
-    <string name="TotalSum">sum</string>
-    <string name="TotalGpa">gpa</string>
 </resources>
