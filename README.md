@@ -1,4 +1,4 @@
-<h2 align="center"><b>GPACalculator</b></h2>
+<h2 align="center"><b>GPA Calculator</b></h2>
 
 ![version](https://img.shields.io/github/v/release/shyamkumaryadav/GPACalculatorApp) ![Star](https://img.shields.io/github/stars/shyamkumaryadav/GPACalculatorApp) ![Licence](https://img.shields.io/apm/l/vim-mode) ![last-commit](https://img.shields.io/github/last-commit/shyamkumaryadav/GPACalculatorApp) 
 
