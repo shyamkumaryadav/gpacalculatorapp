@@ -9,6 +9,6 @@
 
 # Download APK ![Download](https://img.shields.io/github/downloads/shyamkumaryadav/gpacalculatorapp/total) 
 
-[!release](https://github.com/shyamkumaryadav/gpacalculatorapp/releases) <-- Go To Release Page  
+![Release](https://github.com/shyamkumaryadav/gpacalculatorapp/releases) <-- Go To Release Page  
 
 <div><a href="https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v0.0.1/GPACalculator.apk">Click Me To Download</a></div>
