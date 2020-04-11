@@ -4,6 +4,13 @@
 
 ### A GPA Calculator app idea Copy From [@dheerajreal](https://github.com/dheerajreal/gpa-calculator)
 
+## Screenshots
+
+[<img src="https://github.com/shyamkumaryadav/gpacalculatorapp/blob/master/Screenshot/First.jpg" width=160>](https://github.com/shyamkumaryadav/gpacalculatorapp/blob/master/Screenshot/First.jpg)
+[<img src="https://github.com/shyamkumaryadav/gpacalculatorapp/blob/master/Screenshot/Second.jpg" width=160>](https://github.com/shyamkumaryadav/gpacalculatorapp/blob/master/Screenshot/Second.jpg)
+[<img src="https://github.com/shyamkumaryadav/gpacalculatorapp/blob/master/Screenshot/Third.jpg" width=160>](https://github.com/shyamkumaryadav/gpacalculatorapp/blob/master/Screenshot/Third.jpg)
+
+
 ### Contribute To This Project By ![Folk](https://img.shields.io/github/forks/shyamkumaryadav/gpacalculatorapp) branch which is ![Size](https://img.shields.io/github/repo-size/shyamkumaryadav/gpacalculatorapp)
 
 
