@@ -14,8 +14,8 @@
 ### Contribute To This Project By ![Folk](https://img.shields.io/github/forks/shyamkumaryadav/gpacalculatorapp?label=Github&style=for-the-badge) branch which is ![Size](https://img.shields.io/github/repo-size/shyamkumaryadav/gpacalculatorapp?label=Github&style=for-the-badge)
 
 
-# Download APK ![Download](https://img.shields.io/github/downloads/shyamkumaryadav/gpacalculatorapp/total) 
+# Download APK ![Download](https://img.shields.io/github/downloads/shyamkumaryadav/gpacalculatorapp/total?label=Github&style=for-the-badge) 
 
 [Go To Release Page](https://github.com/shyamkumaryadav/gpacalculatorapp/releases) 
 
-<div><a href="https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v0.0.2/app-debug.apk">Click Me To Download</a></div>
+[Clicke me To Download](https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v0.0.2/app-debug.apk)
