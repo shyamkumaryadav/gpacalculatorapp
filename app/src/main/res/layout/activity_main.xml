@@ -22,7 +22,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView"
-        android:layout_above="@id/button"
         android:layout_marginTop="0dp"
         android:fillViewport="true">
         <LinearLayout
@@ -220,6 +219,7 @@
                     android:textColorHint="@drawable/hint_selector"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/paperLayout10"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -229,20 +229,30 @@
                 android:hint="@string/pracitcal56"
                 app:boxStrokeColor="#10C6DD"
                 app:hintAnimationEnabled="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/paper10"
                     android:layout_width="317dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="152dp"
                     android:fontFamily="monospace"
                     android:hint="@string/pracitcal56_hint"
                     android:inputType="number"
                     android:maxLength="3"
                     android:singleLine="true"
-                    android:layout_marginBottom="152dp"
                     android:textColorHint="@drawable/hint_selector"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
-
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="317dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/note"
+                android:fontFamily="monospace"
+                android:textSize="30sp"
+                android:textColor="@color/red"
+                />
             <Button
                 android:id="@+id/button"
                 android:layout_width="300dp"

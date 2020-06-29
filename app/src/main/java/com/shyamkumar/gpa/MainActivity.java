@@ -115,14 +115,14 @@ public class MainActivity extends AppCompatActivity {
 						} else if (marksList[i] >= 80) {
 							gpaList[i] = 10;
 						}
-						gpa = gpa + gpaList[i];
+						gpa = gpa + (gpaList[i]*2);
 					}
 
 //					Toast.makeText(getApplicationContext(), "Sum: " + sum + "\tGPA: " + gpa / 10, Toast.LENGTH_LONG).show();
 					btnCalculate.setClickable(false);
 					Intent intent = new Intent(MainActivity.this, Result.class);
 					intent.putExtra("sum", sum);
-					intent.putExtra("gpa", gpa);
+					intent.putExtra("gpa", gpa/20);
 					startActivity(intent);
 					sum = 0;
 					gpa = 0;
