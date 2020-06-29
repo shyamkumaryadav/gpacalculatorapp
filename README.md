@@ -4,6 +4,10 @@
 
 ### A GPA Calculator app idea Copy From ![@dheerajreal](https://img.shields.io/github/followers/dheerajreal?label=Dheeraj&style=for-the-badge)
 
+### Note  
+`
+    it's Not Use default credit
+`  
 ## Screenshots
 
 [<img src="Screenshot/First.jpg" width=160>](Screenshot/First.jpg)
@@ -18,4 +22,4 @@
 
 [Go To Release Page](https://github.com/shyamkumaryadav/gpacalculatorapp/releases) 
 
-[Click me To Download](https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v1.0.0/app-debug.apk)
+[Click me To Download(v0.0.2)](https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v0.0.2/app-debug.apk)
