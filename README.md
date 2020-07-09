@@ -5,9 +5,8 @@
 ### A GPA Calculator app idea Copy From ![@dheerajreal](https://img.shields.io/github/followers/dheerajreal?label=Dheeraj&style=for-the-badge)
 
 ### Note  
-`
-    it's Not Use default credit
-`  
+  * `It's Use Default Credit Point 2.`  
+  
 ## Screenshots
 
 [<img src="Screenshot/First.jpg" width=160>](Screenshot/First.jpg)
