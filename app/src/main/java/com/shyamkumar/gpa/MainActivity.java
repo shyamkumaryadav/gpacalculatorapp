@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -75,64 +76,78 @@ public class MainActivity extends AppCompatActivity {
 		   finish();
 	   }
 
+	   paper10.setOnKeyListener(new View.OnKeyListener() {
+		   @Override
+		   public boolean onKey(View v, int keyCode, KeyEvent event) {
+		   		if ((event.getAction() == KeyEvent.ACTION_DOWN)){
+		   			calculateGPA();
+		   			return true;
+				}
+			   return false;
+		   }
+	   });
+
 	   btnCalculate.setOnClickListener(new View.OnClickListener() {
 		   @Override
 		   public void onClick(View v) {
-		   	try {
-				if (Objects.requireNonNull(paper8.getText()).toString().isEmpty()) {
-					if (Objects.requireNonNull(paper1.getText()).toString().isEmpty() && Objects.requireNonNull(paper2.getText()).toString().isEmpty() && Objects.requireNonNull(paper3.getText()).toString().isEmpty() && Objects.requireNonNull(paper4.getText()).toString().isEmpty() && Objects.requireNonNull(paper5.getText()).toString().isEmpty() && Objects.requireNonNull(paper6.getText()).toString().isEmpty() && Objects.requireNonNull(paper7.getText()).toString().isEmpty() && Objects.requireNonNull(paper9.getText()).toString().isEmpty() && Objects.requireNonNull(paper10.getText()).toString().isEmpty()) {
-						Toast.makeText(getApplicationContext(), "All Filed is Not True ", Toast.LENGTH_LONG).show();
-					}
-				} else {
-					marksList[0] = Integer.valueOf(Objects.requireNonNull(paper1.getText()).toString());
-					marksList[1] = Integer.valueOf(Objects.requireNonNull(paper2.getText()).toString());
-					marksList[2] = Integer.valueOf(Objects.requireNonNull(paper3.getText()).toString());
-					marksList[3] = Integer.valueOf(Objects.requireNonNull(paper4.getText()).toString());
-					marksList[4] = Integer.valueOf(Objects.requireNonNull(paper5.getText()).toString());
-					marksList[5] = Integer.valueOf(Objects.requireNonNull(paper6.getText()).toString());
-					marksList[6] = Integer.valueOf(Objects.requireNonNull(paper7.getText()).toString());
-					marksList[7] = Integer.valueOf(Objects.requireNonNull(paper8.getText()).toString());
-					marksList[8] = Integer.valueOf(Objects.requireNonNull(paper9.getText()).toString());
-					marksList[9] = Integer.valueOf(Objects.requireNonNull(paper10.getText()).toString());
-					for (Integer integer : marksList) {
-						sum = sum + integer;
-					}
-					for (int i = 0; i < marksList.length; i++) {
-						if (marksList[i] < 40) {
-							gpaList[i] = 0;
-						} else if (marksList[i] >= 40 && marksList[i] < 45) {
-							gpaList[i] = 4;
-						} else if (marksList[i] >= 45 && marksList[i] < 50) {
-							gpaList[i] = 5;
-						} else if (marksList[i] >= 50 && marksList[i] < 55) {
-							gpaList[i] = 6;
-						} else if (marksList[i] >= 55 && marksList[i] < 60) {
-							gpaList[i] = 7;
-						} else if (marksList[i] >= 60 && marksList[i] < 70) {
-							gpaList[i] = 8;
-						} else if (marksList[i] >= 70 && marksList[i] < 80) {
-							gpaList[i] = 9;
-						} else if (marksList[i] >= 80) {
-							gpaList[i] = 10;
-						}
-						gpa = gpa + (gpaList[i]*2);
-					}
-
-//					Toast.makeText(getApplicationContext(), "Sum: " + sum + "\tGPA: " + gpa / 10, Toast.LENGTH_LONG).show();
-					btnCalculate.setClickable(false);
-					Intent intent = new Intent(MainActivity.this, Result.class);
-					intent.putExtra("sum", sum);
-					intent.putExtra("gpa", gpa/20);
-					startActivity(intent);
-					sum = 0;
-					gpa = 0;
-
-				}
-			}catch (Exception e){
-				Toast.makeText(getApplicationContext(), "All Filed is Not True ", Toast.LENGTH_LONG).show();
-			}
+		   	calculateGPA();
 		   }
 	   });
+   }
+
+   private void calculateGPA(){
+   		try {
+	   if (Objects.requireNonNull(paper8.getText()).toString().isEmpty()) {
+		   if (Objects.requireNonNull(paper1.getText()).toString().isEmpty() && Objects.requireNonNull(paper2.getText()).toString().isEmpty() && Objects.requireNonNull(paper3.getText()).toString().isEmpty() && Objects.requireNonNull(paper4.getText()).toString().isEmpty() && Objects.requireNonNull(paper5.getText()).toString().isEmpty() && Objects.requireNonNull(paper6.getText()).toString().isEmpty() && Objects.requireNonNull(paper7.getText()).toString().isEmpty() && Objects.requireNonNull(paper9.getText()).toString().isEmpty() && Objects.requireNonNull(paper10.getText()).toString().isEmpty()) {
+			   Toast.makeText(getApplicationContext(), "All Filed 0.", Toast.LENGTH_LONG).show();
+		   }
+	   } else {
+		   marksList[0] = Integer.valueOf(Objects.requireNonNull(paper1.getText()).toString());
+		   marksList[1] = Integer.valueOf(Objects.requireNonNull(paper2.getText()).toString());
+		   marksList[2] = Integer.valueOf(Objects.requireNonNull(paper3.getText()).toString());
+		   marksList[3] = Integer.valueOf(Objects.requireNonNull(paper4.getText()).toString());
+		   marksList[4] = Integer.valueOf(Objects.requireNonNull(paper5.getText()).toString());
+		   marksList[5] = Integer.valueOf(Objects.requireNonNull(paper6.getText()).toString());
+		   marksList[6] = Integer.valueOf(Objects.requireNonNull(paper7.getText()).toString());
+		   marksList[7] = Integer.valueOf(Objects.requireNonNull(paper8.getText()).toString());
+		   marksList[8] = Integer.valueOf(Objects.requireNonNull(paper9.getText()).toString());
+		   marksList[9] = Integer.valueOf(Objects.requireNonNull(paper10.getText()).toString());
+		   for (Integer integer : marksList) {
+			   sum = sum + integer;
+		   }
+		   for (int i = 0; i < marksList.length; i++) {
+			   if (marksList[i] < 40) {
+				   gpaList[i] = 0;
+			   } else if (marksList[i] >= 40 && marksList[i] < 45) {
+				   gpaList[i] = 4*2;
+			   } else if (marksList[i] >= 45 && marksList[i] < 50) {
+				   gpaList[i] = 5*2;
+			   } else if (marksList[i] >= 50 && marksList[i] < 55) {
+				   gpaList[i] = 6*2;
+			   } else if (marksList[i] >= 55 && marksList[i] < 60) {
+				   gpaList[i] = 7*2;
+			   } else if (marksList[i] >= 60 && marksList[i] < 70) {
+				   gpaList[i] = 8*2;
+			   } else if (marksList[i] >= 70 && marksList[i] < 80) {
+				   gpaList[i] = 9*2;
+			   } else if (marksList[i] >= 80) {
+				   gpaList[i] = 10*2;
+			   }
+			   gpa = gpa + gpaList[i];
+		   }
+
+//					Toast.makeText(getApplicationContext(), "Sum: " + sum + "\tGPA: " + gpa / 10, Toast.LENGTH_LONG).show();
+		   btnCalculate.setClickable(false);
+		   Intent intent = new Intent(MainActivity.this, Result.class);
+		   intent.putExtra("sum", sum);
+		   intent.putExtra("gpa", gpa/2);
+		   startActivity(intent);
+		   sum = 0;
+		   gpa = 0;
+	   }
+   }catch (Exception e){
+	   Toast.makeText(getApplicationContext(), "Some Filed are 0", Toast.LENGTH_LONG).show();
+   }
    }
 
    private TextWatcher rangeCheck = new TextWatcher() {
