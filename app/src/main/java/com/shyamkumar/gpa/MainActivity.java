@@ -8,10 +8,13 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
+
+import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -76,12 +79,11 @@ public class MainActivity extends AppCompatActivity {
 		   finish();
 	   }
 
-	   paper10.setOnKeyListener(new View.OnKeyListener() {
+	   paper10.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 		   @Override
-		   public boolean onKey(View v, int keyCode, KeyEvent event) {
-		   		if ((event.getAction() == KeyEvent.ACTION_DOWN)){
+		   public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+		   		if (actionId == IME_ACTION_DONE){
 		   			calculateGPA();
-		   			return true;
 				}
 			   return false;
 		   }
