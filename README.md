@@ -21,4 +21,4 @@
 
 [Go To Release Page](https://github.com/shyamkumaryadav/gpacalculatorapp/releases) 
 
-[Click me To Download(v1.0.0)](https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v1.0.0/GPA-Calculator.apk)
+[Click me To Download(v1.0.1)](https://github.com/shyamkumaryadav/gpacalculatorapp/releases/download/v1.0.1/Gpa.Calculator.apk)
